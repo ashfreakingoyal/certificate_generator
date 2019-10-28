@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#borderimg1 { 
+  border: 30px solid transparent;
+  padding: 15px;
+  /*-webkit-border-image: url(border.png) 30 round; /* Safari 3.1-5 */
+  /*-o-border-image: url(border.png) 30 round; /* Opera 11-12.1 */
+  border-image: url(cer4.png) 45 round;
+  height: 100%;
+}
+#pad{
+    padding: 15px;
+    background-color: #f8f8f8c8;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.heading{
+    text-align: center;
+    font-size: 100px;
+    color:  #393e46;
+    font-family: Comic Sans MS ;
+}
+.sub{
+    text-align: center;
+    font-size: 50px;
+    font-family: Comic Sans MS;
+}
+.place{
+  margin: auto;
+  display: block;
+  
+}
+/*#borderimg2 { 
+  border: 10px solid transparent;
+  padding: 15px;
+  -webkit-border-image: url(border.png) 30 stretch; /* Safari 3.1-5 */
+  /*-o-border-image: url(border.png) 30 stretch; /* Opera 11-12.1 */
+ /* border-image: url(cer1.png) 30 stretch;
+}*/
+#initial{
+        position: relative;
+            top: 200px;
+            left:27%;
+            border: 1px solid black;
+            width: 600px;
+            padding: 5%;
+            background-color: lightcoral;
+         /*  display:none;*/
+    }        
+    @media screen and (max-width: 400px){
+    #initial {
+        position: static;
+        /*padding: 1%;*/
+        border: 1px solid black;
+            width: 100px;
+            padding: 5%;
+            background-color: lightcoral;
+          right:200px;
+            /*display: block;*/}
+        
+     
+    
+    }
+</style>
+
+<script>
+ function main(){
+             document.getElementById("pad").style.display="block";
+             document.getElementById("initial").style.display="none";
+              
+           var name = document.getElementById("names").value;
+            var hours = document.getElementById("hourss").value;
+            var course= document.getElementById("courses").value;
+            var month= document.getElementById("months").value;
+            var date= document.getElementById("dates").value;
+
+
+            document.getElementById("name").innerHTML=name;
+            document.getElementById("hours").innerHTML=hours;
+            document.getElementById("course").innerHTML=course;
+            document.getElementById("month").innerHTML=month;
+            document.getElementById("date").innerHTML=date;
+
+            function print(){
+                window.print();
+            }
+            
+ }
+
+</script>
+</head>
+<body>
+
+  <!--////////////////////////////////////////////input-box///////////////////////////////////////////////////////////////////////////////////////-->   
+  <div id="initial">
+      Enter Fullname:&nbsp;<input type="text" id="names"><br>
+      <!--&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Roll No:<input type="text" id="rno"><br>-->
+      Hours:<input type="text"  id="hourss"><br>
+      Course Nane:<input type="text" id="courses"><br>
+      Month:<input type="text" id="months"><br>
+      DD,YY:<input type="text" id="dates"><br>
+     
+  
+      <input type="submit" value="submit" onclick="main()">
+      </div>
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+          
+
+<!--<h1>The border-image Property</h1>
+<p>The border-image property specifies an image to be used as the border around an element:</p>-->
+<div id="pad">
+<div id="borderimg1">
+<h1 class="heading">Certificate of Completion</h1>
+<p class="sub">This is to certify that <span id="name"></span> successfully completed <span id="hours"></span>hours of <span id="course"></span> online course on <span id="month"></span> <span id="date"></span></p>
+<div ><img class="place" src="cer7.png"></div>
+</div>
+<button  style="position: relative; top: 20px; left:5%;" onclick="print()">print</button>
+</div>
+
+<!--<p id="borderimg2">Here, the image is stretched to fill the area.</p>
+
+<p>Here is the original image:</p><img src="cer1.png"><img src="cer6.png">
+<p><strong>Note:</strong> Internet Explorer 10, and earlier versions, do not support the border-image property.</p>-->
+
+</body>
+</html>
